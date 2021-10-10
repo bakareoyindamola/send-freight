@@ -24,45 +24,46 @@ export default function Navbar() {
   }, [width]);
 
   return (
-    <Wrapper>
-      <InnerWrapper>
-        <LogoText>
-          send
-          <span>FREIGHT</span>
-        </LogoText>
+    <>
+      <Wrapper>
+        <InnerWrapper>
+          <LogoText>
+            send
+            <span>FREIGHT</span>
+          </LogoText>
 
-        <DesktopNavWrapper>
-          <InputWrapper>
-            <SearchOutline
+          <DesktopNavWrapper>
+            <InputWrapper>
+              <SearchOutline
+                color="#ffffff"
+                title="Search"
+                height="20px"
+                width="20px"
+              />
+              <SearchInput
+                placeholder="Search"
+              />
+            </InputWrapper>
+            <LinksWrapper>
+              <Link href="/" border>Request Quote</Link>
+              <Link href="/">Book Shipment</Link>
+            </LinksWrapper>
+          </DesktopNavWrapper>
+
+          <MenuButton
+            onClick={() => {
+              setMobileNav((state) => !state);
+            }}
+          >
+            <MenuOutline
               color="#ffffff"
-              title="Search"
-              height="20px"
-              width="20px"
+              title="MENU"
+              height="40px"
+              width="40px"
             />
-            <SearchInput
-              placeholder="Search"
-            />
-          </InputWrapper>
-          <LinksWrapper>
-            <Link href="/" border>Request Quote</Link>
-            <Link href="/">Book Shipment</Link>
-          </LinksWrapper>
-        </DesktopNavWrapper>
-
-        <MenuButton
-          onClick={() => {
-            setMobileNav((state) => !state);
-          }}
-        >
-          <MenuOutline
-            color="#ffffff"
-            title="MENU"
-            height="40px"
-            width="40px"
-          />
-        </MenuButton>
-      </InnerWrapper>
-
+          </MenuButton>
+        </InnerWrapper>
+      </Wrapper>
       <MobileWrapper className={mobileNav ? 'active' : 'inactive'}>
         <InputWrapper>
           <SearchInput
@@ -74,6 +75,6 @@ export default function Navbar() {
           <Link href="/">Book Shipment</Link>
         </LinksWrapper>
       </MobileWrapper>
-    </Wrapper>
+    </>
   );
 }

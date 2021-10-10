@@ -46,6 +46,7 @@ export const MobileWrapper = styled.div`
   background: rgba(0,0,0,.95);
   padding: 16px;
   transition: all .5s ease-in-out;
+  z-index: 1000;
   
   &.inactive {
     left: -400px;
